@@ -7,6 +7,8 @@ This plugin makes it possible to manually attribute orders to collaborators when
 * Siren Affiliates 1.0.8 or higher.
 * WooCommerce
 
+## Setup
+
 1. Create or update a program in Siren so that it uses "Coupon code used" engagement tracking event.
 2. Create a coupon (you can set a zero-dollar discount on the coupon if you want). Be sure to associate the coupon with the collaborator you want to credit. [See this video](https://www.sirenaffiliates.com/documentation/getting-started/create-affiliate-coupons-for-woocommerce-using-siren/).
 3. Install and activate this plugin
