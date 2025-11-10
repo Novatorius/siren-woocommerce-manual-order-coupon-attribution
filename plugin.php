@@ -56,17 +56,6 @@ add_action('siren_ready', function () {
 
             // broadcast the sale triggered event.
             Event::broadcast(new SaleTriggered($opportunity->getId(), $detailsAdapter->toArray($orderId), $orderId, 'wc_order'));
-
-            // Now try to get the transaction from the mapping table
-            try {
-                $mapping = Mappings::getByExternalId($orderId, 'wc_order', 'transaction');
-                $transaction = Transactions::find($mapping->getLocalId());
-            } catch (RecordNotFoundException|DatastoreErrorException $e) {
-                return null;
-            }
-
-            // Finally, if this order's status is completed, trigger the completed action now.
-            Event::broadcast(new TransactionCompleted($transaction));
         }
     });
 });
